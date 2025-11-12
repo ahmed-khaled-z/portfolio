@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Khaled - Mobile Developer</title>
+    <meta name="description" content="Ahmed Khaled - Mobile Developer with 5+ years experience in Flutter, Kotlin & Java">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient 3s ease infinite;
+        }
+        
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fade-in 1s ease-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .particle {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .nav-scrolled {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen text-white overflow-x-hidden">
+    
+    <!-- Animated Background -->
+    <div id="bgGradient" class="fixed inset-0 opacity-30 transition-all duration-300 pointer-events-none"></div>
+
+    <!-- Floating Particles -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent animate-pulse">
+                    AK
+                </h1>
+                
+                <div class="hidden md:flex gap-8">
+                    <a href="#home" class="nav-link relative group text-gray-300 hover:text-white transition-all duration-300">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-600 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#about" class="nav-link relative group text-gray-300 hover:text-white transition-all duration-300">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-600 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#skills" class="nav-link relative group text-gray-300 hover:text-white transition-all duration-300">
+                        Skills
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-600 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#projects" class="nav-link relative group text-gray-300 hover:text-white transition-all duration-300">
+                        Projects
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-600 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#contact" class="nav-link relative group text-gray-300 hover:text-white transition-all duration-300">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-600 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </div>
+
+                <button id="menuBtn" class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 z-40 bg-slate-900/98 backdrop-blur-lg md:hidden hidden flex items-center justify-center">
+        <button id="closeMenuBtn" class="absolute top-6 right-6 text-white">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <div class="flex flex-col gap-8 text-center">
+            <a href="#home" class="mobile-nav-link text-2xl text-gray-300 hover:text-white transition-all hover:scale-110">Home</a>
+            <a href="#about" class="mobile-nav-link text-2xl text-gray-300 hover:text-white transition-all hover:scale-110">About</a>
+            <a href="#skills" class="mobile-nav-link text-2xl text-gray-300 hover:text-white transition-all hover:scale-110">Skills</a>
+            <a href="#projects" class="mobile-nav-link text-2xl text-gray-300 hover:text-white transition-all hover:scale-110">Projects</a>
+            <a href="#contact" class="mobile-nav-link text-2xl text-gray-300 hover:text-white transition-all hover:scale-110">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="max-w-6xl w-full text-center space-y-8 animate-fade-in">
+            <div class="inline-block mb-4">
+                <div class="w-32 h-32 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full mx-auto flex items-center justify-center text-5xl font-bold animate-float shadow-2xl">
+                    AK
+                </div>
+            </div>
+            
+            <h1 class="text-6xl md:text-8xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent animate-gradient">
+                Ahmed Khaled
+            </h1>
+            
+            <p class="text-3xl md:text-4xl text-gray-300 font-light">
+                Mobile Developer
+            </p>
+            
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                5+ years crafting exceptional mobile experiences with Flutter, Kotlin & Java
+            </p>
+
+            <div class="flex gap-6 justify-center pt-8">
+                <a href="https://github.com/ahmed-khaled-z" target="_blank" rel="noopener noreferrer" 
+                   class="p-4 bg-slate-800/50 backdrop-blur rounded-full hover:bg-purple-600 transition-all duration-300 hover:scale-110 hover:rotate-12">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/ahmed-khaled-123ab3130/" target="_blank" rel="noopener noreferrer"
+                   class="p-4 bg-slate-800/50 backdrop-blur rounded-full hover:bg-blue-600 transition-all duration-300 hover:scale-110 hover:rotate-12">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+                <a href="mailto:ahmed.khaled.z@hotmail.com"
+                   class="p-4 bg-slate-800/50 backdrop-blur rounded-full hover:bg-pink-600 transition-all duration-300 hover:scale-110 hover:rotate-12">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="pt-8 animate-bounce">
+                <div class="w-6 h-10 border-2 border-purple-400 rounded-full mx-auto relative">
+                    <div class="w-1.5 h-2 bg-purple-400 rounded-full absolute top-2 left-1/2 -translate-x-1/2 animate-pulse"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="relative py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+                About Me
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-800/30 backdrop-blur-lg rounded-3xl p-8 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
+                    <div class="flex items-center gap-4 mb-4">
+                        <svg class="text-purple-400 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <h3 class="text-2xl font-bold">Location</h3>
+                    </div>
+                    <p class="text-gray-300 text-lg">Cairo, Egypt</p>
+                </div>
+
+                <div class="bg-slate-800/30 backdrop-blur-lg rounded-3xl p-8 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
+                    <div class="flex items-center gap-4 mb-4">
+                        <svg class="text-pink-400 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        <h3 class="text-2xl font-bold">Contact</h3>
+                    </div>
+                    <p class="text-gray-300 text-lg">+20 106 934 3393</p>
+                </div>
+
+                <div class="md:col-span-2 bg-slate-800/30 backdrop-blur-lg rounded-3xl p-8 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
+                    <div class="flex items-center gap-4 mb-4">
+                        <svg class="text-blue-400 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                            <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+                        </svg>
+                        <h3 class="text-2xl font-bold">Education</h3>
+                    </div>
+                    <p class="text-gray-300 text-lg">Bachelor's Degree, Information Systems</p>
+                    <p class="text-gray-400">New Cairo Academy | 2014 - 2018</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="relative py-20 px-6 bg-slate-800/20">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+                Technical Skills
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20">
+                    <h3 class="text-xl font-bold mb-4 text-purple-400">Platforms</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">Flutter</span>
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">Laravel</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20">
+                    <h3 class="text-xl font-bold mb-4 text-purple-400">Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">Java</span>
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">Dart</span>
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">Kotlin</span>
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">PHP</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20">
+                    <h3 class="text-xl font-bold mb-4 text-purple-400">Design Patterns</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">MVP</span>
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">MVC</span>
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">MVVM</span>
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">Clean Architecture</span>
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">DI</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20">
+                    <h3 class="text-xl font-bold mb-4 text-purple-400">CI/CD</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">Azure Pipelines</span>
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">GitHub Actions</span>
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">Codemagic</span>
+                    </div>
+                </div>
+
+                <div class="md:col-span-2 bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20">
+                    <h3 class="text-xl font-bold mb-4 text-purple-400">Flutter Skills</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">Provider</span>
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">Bloc</span>
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">Material Design</span>
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">Localization</span>
+                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm hover:bg-purple-500/40 transition-all duration-300 hover:scale-110">Native Integration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="relative py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+                Experience
+            </h2>
+
+            <div class="space-y-6">
+                <div class="bg-slate-800/30 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 group">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-purple-400 group-hover:text-pink-400 transition-colors">Mobile Developer</h3>
+                            <p class="text-xl text-gray-300 mt-1">Watania Solutions Co.</p>
+                            <p class="text-gray-400 mt-1">Full-time - Hybrid</p>
+                        </div>
+                        <div class="mt-4 md:mt-0">
+                            <span class="px-4 py-2 bg-purple-500/20 rounded-full text-sm">Jul 2023 - Present</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/30 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 group">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-purple-400 group-hover:text-pink-400 transition-colors">Full Stack</h3>
+                            <p class="text-xl text-gray-300 mt-1">PressX</p>
+                            <p class="text-gray-400 mt-1">Self Employed</p>
+                        </div>
+                        <div class="mt-4 md:mt-0">
+                            <span class="px-4 py-2 bg-purple-500/20 rounded-full text-sm">2022 - Present</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/30 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 group">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-purple-400 group-hover:text-pink-400 transition-colors">Mobile Developer</h3>
+                            <p class="text-xl text-gray-300 mt-1">Technosignage</p>
+                            <p class="text-gray-400 mt-1">Full-time - Remote</p>
+                        </div>
+                        <div class="mt-4 md:mt-0">
+                            <span class="px-4 py-2 bg-purple-500/20 rounded-full text-sm">Apr 2021 - Jun 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="relative py-20 px-6 bg-slate-800/20">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+                Featured Projects
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">M</div>
+                        <a href="https://play.google.com/store/apps/details?id=com.elmtwer.canteen" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-pink-400 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">MQASEF</h3>
+                    <p class="text-gray-400 text-sm mb-2">Watania Solutions • 2024</p>
+                    <p class="text-gray-300">Canteen App</p>
+                </div>
+
+                <div class="group bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">P</div>
+                        <a href="https://play.google.com/store/apps/details?id=com.elmadar.pressx" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-pink-400 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">PressX</h3>
+                    <p class="text-gray-400 text-sm mb-2">PressX • 2022</p>
+                    <p class="text-gray-300">PlayStation Cafe Management</p>
+                </div>
+
+                <div class="group bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">P</div>
+                        <a href="https://play.google.com/store/apps/details?id=com.technosignage.fca" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-pink-400 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">PERFOGAUGE</h3>
+                    <p class="text-gray-400 text-sm mb-2">Technosignage • 2022</p>
+                    <p class="text-gray-300">KPI Tracking App</p>
+                </div>
+
+                <div class="group bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">E</div>
+                        <a href="https://play.google.com/store/apps/details?id=com.evkumpara.webdivs.evkumpara" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-pink-400 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">EVKUMBARA</h3>
+                    <p class="text-gray-400 text-sm mb-2">WebDivs • 2022</p>
+                    <p class="text-gray-300">Real Estate Investment</p>
+                </div>
+
+                <div class="group bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">M</div>
+                        <a href="https://play.google.com/store/apps/details?id=xdev.mool" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-pink-400 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">MOOL</h3>
+                    <p class="text-gray-400 text-sm mb-2">XDev • 2022</p>
+                    <p class="text-gray-300">E-commerce (Kotlin)</p>
+                </div>
+
+                <div class="group bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">T</div>
+                        <a href="https://play.google.com/store/apps/details?id=com.apptechegy.trackhom" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-pink-400 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">TRACKHOM</h3>
+                    <p class="text-gray-400 text-sm mb-2">AppTech EGY • 2021</p>
+                    <p class="text-gray-300">Children Tracking App</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="relative py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+                Published Packages
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="https://pub.dev/packages/clean_architecture_with_state_management" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/30 hover:border-purple-500/70 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 group">
+                    <svg class="text-purple-400 mb-4 group-hover:rotate-12 transition-transform w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                    </svg>
+                    <h3 class="text-lg font-bold group-hover:text-purple-400 transition-colors">Clean Architecture with State Management</h3>
+                </a>
+
+                <a href="https://pub.dev/packages/flutter_svg_click_listener" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/30 hover:border-purple-500/70 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 group">
+                    <svg class="text-purple-400 mb-4 group-hover:rotate-12 transition-transform w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                    </svg>
+                    <h3 class="text-lg font-bold group-hover:text-purple-400 transition-colors">SVG Click Listener</h3>
+                </a>
+
+                <a href="https://pub.dev/packages/flutter_custom_creator" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/30 hover:border-purple-500/70 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 group">
+                    <svg class="text-purple-400 mb-4 group-hover:rotate-12 transition-transform w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                    </svg>
+                    <h3 class="text-lg font-bold group-hover:text-purple-400 transition-colors">Flutter Custom Creator</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative py-20 px-6 bg-slate-800/20">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+                Let's Work Together
+            </h2>
+            <p class="text-xl text-gray-300 mb-12">
+                Ready to bring your mobile app idea to life? Get in touch!
+            </p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <a href="mailto:ahmed.khaled.z@hotmail.com" class="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full font-bold text-lg hover:scale-110 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/50">
+                    Send Email
+                </a>
+                <a href="https://www.linkedin.com/in/ahmed-khaled-123ab3130/" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-slate-800/50 backdrop-blur border-2 border-purple-500/50 rounded-full font-bold text-lg hover:scale-110 transition-all duration-300 hover:border-purple-500">
+                    Connect on LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative py-12 px-6 border-t border-purple-500/20">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-gray-400 mb-4">
+                © 2024 Ahmed Khaled. Crafted with passion for mobile development.
+            </p>
+            <div class="flex gap-6 justify-center">
+                <a href="https://github.com/ahmed-khaled-z" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-400 transition-colors">GitHub</a>
+                <a href="https://www.linkedin.com/in/ahmed-khaled-123ab3130/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-400 transition-colors">LinkedIn</a>
+                <a href="https://medium.com/@ahmed.khaled.zk" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-400 transition-colors">Medium</a>
+                <a href="https://wakatime.com/@ahmedkhaledzk" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-400 transition-colors">WakaTime</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+
+        // Mouse move effect for background
+        document.addEventListener('mousemove', (e) => {
+            const bgGradient = document.getElementById('bgGradient');
+            const x = e.clientX;
+            const y = e.clientY;
+            bgGradient.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(124, 58, 237, 0.3), transparent 50%)`;
+        });
+
+        // Generate particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 20; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle absolute w-2 h-2 bg-purple-400 rounded-full';
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.animationDelay = `${Math.random() * 3}s`;
+            particle.style.animationDuration = `${2 + Math.random() * 3}s`;
+            particlesContainer.appendChild(particle);
+        }
+    </script>
+</body>
+</html>
