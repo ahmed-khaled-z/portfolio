@@ -7,7 +7,7 @@
  */
 const PORTFOLIO_DATA = {
   "personal": {
-    "name": "Ahmed Khaled zakaria",
+    "name": "Ahmed Khaled",
     "title": "Mobile Developer",
     "description": "5+ years crafting exceptional mobile experiences with Flutter, Kotlin & Java",
     "image": "image.jpeg",
