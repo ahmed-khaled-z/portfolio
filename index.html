@@ -6,7 +6,10 @@
     <title>Ahmed ahmed - Mobile Developer</title>
     <meta name="description" content="Ahmed Khaled - Mobile Developer with 5+ years experience in Flutter, Kotlin & Java">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="portfolio-data.js"></script>
+    <script>
+        // Load portfolio data with cache-busting to always get latest changes
+        document.write('<script src="portfolio-data.js?v=' + Date.now() + '"><\/script>');
+    </script>
     <style>
         @keyframes gradient {
             0%, 100% { background-position: 0% 50%; }
@@ -135,7 +138,7 @@
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <a href="#home" aria-label="Home">
-                    <img src="image.jpeg" alt="Ahmed Khaled" class="h-12 w-12 rounded-full object-cover border-2 border-purple-500/50" width="48" height="48" loading="eager">
+                    <img id="navImage" src="image.jpeg" alt="" class="h-12 w-12 rounded-full object-cover border-2 border-purple-500/50" width="48" height="48" loading="eager">
                 </a>
                 
                 <div class="hidden md:flex gap-8">
@@ -195,61 +198,24 @@
     <section id="home" class="relative min-h-screen flex items-center justify-center px-6 pt-20">
         <div class="max-w-6xl w-full text-center space-y-8 animate-fade-in">
             <div class="inline-block mb-4">
-                <img src="image.jpeg" alt="Ahmed Khaled" class="w-56 h-56 md:w-64 md:h-64 rounded-full mx-auto object-cover border-4 border-purple-500/50 shadow-2xl animate-float" width="256" height="256" loading="eager">
+                <img id="heroImage" src="image.jpeg" alt="" class="w-56 h-56 md:w-64 md:h-64 rounded-full mx-auto object-cover border-4 border-purple-500/50 shadow-2xl animate-float" width="256" height="256" loading="eager">
             </div>
             
-            <h1 class="text-6xl md:text-8xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent animate-gradient">
-                Ahmed Khaled
-            </h1>
+            <h1 id="heroName" class="text-6xl md:text-8xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent animate-gradient"></h1>
             
-            <p class="text-3xl md:text-4xl text-gray-300 font-light">
-                Mobile Developer
-            </p>
+            <p id="heroTitle" class="text-3xl md:text-4xl text-gray-300 font-light"></p>
             
-            <p class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                5+ years crafting exceptional mobile experiences with Flutter, Kotlin & Java
-            </p>
+            <p id="heroDescription" class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"></p>
 
-            <div class="flex gap-6 justify-center pt-8">
-                <a href="https://github.com/ahmed-khaled-z" target="_blank" rel="noopener noreferrer" 
-                   class="p-4 bg-slate-800/50 backdrop-blur rounded-full hover:bg-purple-600 transition-all duration-300 hover:scale-110 hover:rotate-12" aria-label="GitHub profile">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/ahmed-khaled-123ab3130/" target="_blank" rel="noopener noreferrer"
-                   class="p-4 bg-slate-800/50 backdrop-blur rounded-full hover:bg-blue-600 transition-all duration-300 hover:scale-110 hover:rotate-12" aria-label="LinkedIn profile">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                </a>
-                <a href="mailto:ahmed.khaled.z@hotmail.com"
-                   class="p-4 bg-slate-800/50 backdrop-blur rounded-full hover:bg-pink-600 transition-all duration-300 hover:scale-110 hover:rotate-12" aria-label="Send email">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
-                </a>
-            </div>
+            <div id="heroSocial" class="flex gap-6 justify-center pt-8"></div>
 
             <nav class="flex flex-wrap gap-4 justify-center pt-8" aria-label="Main navigation">
-                <a href="#home" class="px-6 py-3 bg-slate-800/50 backdrop-blur rounded-full hover:bg-purple-600/50 transition-all duration-300 hover:scale-110 text-gray-300 hover:text-white">
-                    Home
-                </a>
-                <a href="#about" class="px-6 py-3 bg-slate-800/50 backdrop-blur rounded-full hover:bg-purple-600/50 transition-all duration-300 hover:scale-110 text-gray-300 hover:text-white">
-                    About
-                </a>
-                <a href="#experience" class="px-6 py-3 bg-slate-800/50 backdrop-blur rounded-full hover:bg-purple-600/50 transition-all duration-300 hover:scale-110 text-gray-300 hover:text-white">
-                    Experience
-                </a>
-                <a href="#skills" class="px-6 py-3 bg-slate-800/50 backdrop-blur rounded-full hover:bg-purple-600/50 transition-all duration-300 hover:scale-110 text-gray-300 hover:text-white">
-                    Skills
-                </a>
-                <a href="#projects" class="px-6 py-3 bg-slate-800/50 backdrop-blur rounded-full hover:bg-purple-600/50 transition-all duration-300 hover:scale-110 text-gray-300 hover:text-white">
-                    Projects
-                </a>
-                <a href="#contact" class="px-6 py-3 bg-slate-800/50 backdrop-blur rounded-full hover:bg-purple-600/50 transition-all duration-300 hover:scale-110 text-gray-300 hover:text-white">
-                    Contact
-                </a>
+                <a href="#home" class="px-6 py-3 bg-slate-800/50 backdrop-blur rounded-full hover:bg-purple-600/50 transition-all duration-300 hover:scale-110 text-gray-300 hover:text-white">Home</a>
+                <a href="#about" class="px-6 py-3 bg-slate-800/50 backdrop-blur rounded-full hover:bg-purple-600/50 transition-all duration-300 hover:scale-110 text-gray-300 hover:text-white">About</a>
+                <a href="#experience" class="px-6 py-3 bg-slate-800/50 backdrop-blur rounded-full hover:bg-purple-600/50 transition-all duration-300 hover:scale-110 text-gray-300 hover:text-white">Experience</a>
+                <a href="#skills" class="px-6 py-3 bg-slate-800/50 backdrop-blur rounded-full hover:bg-purple-600/50 transition-all duration-300 hover:scale-110 text-gray-300 hover:text-white">Skills</a>
+                <a href="#projects" class="px-6 py-3 bg-slate-800/50 backdrop-blur rounded-full hover:bg-purple-600/50 transition-all duration-300 hover:scale-110 text-gray-300 hover:text-white">Projects</a>
+                <a href="#contact" class="px-6 py-3 bg-slate-800/50 backdrop-blur rounded-full hover:bg-purple-600/50 transition-all duration-300 hover:scale-110 text-gray-300 hover:text-white">Contact</a>
             </nav>
 
             <div class="pt-8 animate-bounce" aria-hidden="true">
@@ -263,45 +229,8 @@
     <!-- About Section -->
     <section id="about" class="relative py-20 px-6">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-                About Me
-            </h2>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-slate-800/30 backdrop-blur-lg rounded-3xl p-8 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
-                    <div class="flex items-center gap-4 mb-4">
-                        <svg class="text-purple-400 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                        <h3 class="text-2xl font-bold">Location</h3>
-                    </div>
-                    <p class="text-gray-300 text-lg">Cairo, Egypt</p>
-                </div>
-
-                <div class="bg-slate-800/30 backdrop-blur-lg rounded-3xl p-8 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
-                    <div class="flex items-center gap-4 mb-4">
-                        <svg class="text-pink-400 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                        </svg>
-                        <h3 class="text-2xl font-bold">Contact</h3>
-                    </div>
-                    <p class="text-gray-300 text-lg">+20 106 934 3393</p>
-                </div>
-
-                <div class="md:col-span-2 bg-slate-800/30 backdrop-blur-lg rounded-3xl p-8 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
-                    <div class="flex items-center gap-4 mb-4">
-                        <svg class="text-blue-400 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                            <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
-                        </svg>
-                        <h3 class="text-2xl font-bold">Education</h3>
-                    </div>
-                    <p class="text-gray-300 text-lg">Bachelor's Degree, Information Systems</p>
-                    <p class="text-gray-400">New Cairo Academy | 2014 - 2018</p>
-                </div>
-            </div>
+            <h2 class="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">About Me</h2>
+            <div id="aboutContainer" class="grid md:grid-cols-2 gap-8"></div>
         </div>
     </section>
 
@@ -309,165 +238,16 @@
     <!-- Experience Section -->
     <section id="experience" class="relative py-20 px-6">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-                Experience
-            </h2>
-
-            <div class="space-y-6">
-                <div class="bg-slate-800/30 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 group">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                        <div>
-                            <h3 class="text-2xl font-bold text-purple-400 group-hover:text-pink-400 transition-colors">SENIOR MOBILE DEVELOPER</h3>
-                            <p class="text-xl text-gray-300 mt-1">Watania Solutions Co.</p>
-                            <p class="text-gray-400 mt-1">FULL-TIME - HYBRID</p>
-                        </div>
-                        <div class="mt-4 md:mt-0">
-                            <span class="px-4 py-2 bg-purple-500/20 rounded-full text-sm">Jul 2023 - Present</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800/30 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 group">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                        <div>
-                            <h3 class="text-2xl font-bold text-purple-400 group-hover:text-pink-400 transition-colors">Full Stack</h3>
-                            <p class="text-xl text-gray-300 mt-1">PressX</p>
-                            <p class="text-gray-400 mt-1">SELF EMPLOYED</p>
-                        </div>
-                        <div class="mt-4 md:mt-0">
-                            <span class="px-4 py-2 bg-purple-500/20 rounded-full text-sm">2022 - Present</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800/30 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 group">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                        <div>
-                            <h3 class="text-2xl font-bold text-purple-400 group-hover:text-pink-400 transition-colors">SENIOR MOBILE DEVELOPER</h3>
-                            <p class="text-xl text-gray-300 mt-1">WebDev</p>
-                            <p class="text-gray-400 mt-1">PART-TIME - REMOTE</p>
-                        </div>
-                        <div class="mt-4 md:mt-0">
-                            <span class="px-4 py-2 bg-purple-500/20 rounded-full text-sm">Dec 2022 - 2024</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800/30 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 group">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                        <div>
-                            <h3 class="text-2xl font-bold text-purple-400 group-hover:text-pink-400 transition-colors">SENIOR MOBILE DEVELOPER</h3>
-                            <p class="text-xl text-gray-300 mt-1">XDev</p>
-                            <p class="text-gray-400 mt-1">PART-TIME - REMOTE</p>
-                        </div>
-                        <div class="mt-4 md:mt-0">
-                            <span class="px-4 py-2 bg-purple-500/20 rounded-full text-sm">Oct 2022 - 2023</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800/30 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 group">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                        <div>
-                            <h3 class="text-2xl font-bold text-purple-400 group-hover:text-pink-400 transition-colors">MID LEVEL MOBILE DEVELOPER</h3>
-                            <p class="text-xl text-gray-300 mt-1">Technosignage</p>
-                            <p class="text-gray-400 mt-1">FULL-TIME - REMOTE</p>
-                        </div>
-                        <div class="mt-4 md:mt-0">
-                            <span class="px-4 py-2 bg-purple-500/20 rounded-full text-sm">Apr 2021 - Jun 2023</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800/30 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 group">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                        <div>
-                            <h3 class="text-2xl font-bold text-purple-400 group-hover:text-pink-400 transition-colors">JUNIOR MOBILE DEVELOPER</h3>
-                            <p class="text-xl text-gray-300 mt-1">AppTech EGY</p>
-                            <p class="text-gray-400 mt-1">FULL-TIME - ON-SITE</p>
-                        </div>
-                        <div class="mt-4 md:mt-0">
-                            <span class="px-4 py-2 bg-purple-500/20 rounded-full text-sm">Aug 2020 - Apr 2021</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h2 class="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">Experience</h2>
+            <div id="experienceContainer" class="space-y-6"></div>
         </div>
     </section>
 
-      <!-- Skills Section -->
-      <section id="skills" class="relative py-20 px-6 bg-slate-800/20">
+    <!-- Skills Section -->
+    <section id="skills" class="relative py-20 px-6 bg-slate-800/20">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-                Technical Skills
-            </h2>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20">
-                    <h3 class="text-xl font-bold mb-4 text-purple-400">Platforms</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">Flutter</span>
-                        <span class="skill-tag">Android Native</span>
-                        <span class="skill-tag">Laravel</span>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20">
-                    <h3 class="text-xl font-bold mb-4 text-purple-400">Architecture</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">SOLID Principles</span>
-                        <span class="skill-tag">Design Patterns</span>
-                        <span class="skill-tag">Version Control</span>
-                        <span class="skill-tag">Dependency Injection</span>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20">
-                    <h3 class="text-xl font-bold mb-4 text-purple-400">Advanced</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">Serverpod</span>
-                        <span class="skill-tag">CI/CD</span>
-                        <span class="skill-tag">Testing (Unit - Widget - Integration)</span>
-                        <span class="skill-tag">Crash Analysis</span>
-                        <span class="skill-tag">Secure Storage</span>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20">
-                    <h3 class="text-xl font-bold mb-4 text-purple-400">State Management</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">Provider</span>
-                        <span class="skill-tag">Bloc / Cubit</span>
-                        <span class="skill-tag">Riverpod</span>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20">
-                    <h3 class="text-xl font-bold mb-4 text-purple-400">Integration</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">REST APIs</span>
-                        <span class="skill-tag">GraphQL</span>
-                        <span class="skill-tag">WebSockets</span>
-                        <span class="skill-tag">Firebase</span>
-                        <span class="skill-tag">Maps</span>
-                        <span class="skill-tag">Payment Methods</span>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20">
-                    <h3 class="text-xl font-bold mb-4 text-purple-400">Soft Skills</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">Leadership</span>
-                        <span class="skill-tag">Communication</span>
-                        <span class="skill-tag">Self Learning</span>
-                        <span class="skill-tag">Documentation</span>
-                        <span class="skill-tag">Time Estimation</span>
-                        <span class="skill-tag">Problem Solving</span>
-                        <span class="skill-tag">UX Awareness</span>
-                        <span class="skill-tag">Decision Making</span>
-                    </div>
-                </div>
-            </div>
+            <h2 class="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">Technical Skills</h2>
+            <div id="skillsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </div>
     </section>
 
@@ -490,333 +270,217 @@
     <!-- Packages Section -->
     <section class="relative py-20 px-6">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-                Published Packages
-            </h2>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <a href="https://pub.dev/packages/clean_architecture_with_state_management" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/30 hover:border-purple-500/70 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 group">
-                    <svg class="text-purple-400 mb-4 group-hover:rotate-12 transition-transform w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                    </svg>
-                    <h3 class="text-lg font-bold group-hover:text-purple-400 transition-colors">Clean Architecture with State Management</h3>
-                </a>
-
-                <a href="https://pub.dev/packages/flutter_svg_click_listener" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/30 hover:border-purple-500/70 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 group">
-                    <svg class="text-purple-400 mb-4 group-hover:rotate-12 transition-transform w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                    </svg>
-                    <h3 class="text-lg font-bold group-hover:text-purple-400 transition-colors">SVG Click Listener</h3>
-                </a>
-
-                <a href="https://pub.dev/packages/flutter_custom_creator" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/30 hover:border-purple-500/70 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 group">
-                    <svg class="text-purple-400 mb-4 group-hover:rotate-12 transition-transform w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                    </svg>
-                    <h3 class="text-lg font-bold group-hover:text-purple-400 transition-colors">Flutter Custom Creator</h3>
-                </a>
-            </div>
+            <h2 class="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">Published Packages</h2>
+            <div id="packagesContainer" class="grid md:grid-cols-3 gap-6"></div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="relative py-20 px-6 bg-slate-800/20">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-5xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-                Let's Work Together
-            </h2>
-            <p class="text-xl text-gray-300 mb-12">
-                Ready to bring your mobile app idea to life? Get in touch!
-            </p>
-            <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <a href="mailto:ahmed.khaled.z@hotmail.com" class="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full font-bold text-lg hover:scale-110 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/50">
-                    Send Email
-                </a>
-                <a href="https://www.linkedin.com/in/ahmed-khaled-123ab3130/" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-slate-800/50 backdrop-blur border-2 border-purple-500/50 rounded-full font-bold text-lg hover:scale-110 transition-all duration-300 hover:border-purple-500">
-                    Connect on LinkedIn
-                </a>
-            </div>
+            <h2 class="text-5xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">Let's Work Together</h2>
+            <p class="text-xl text-gray-300 mb-12">Ready to bring your mobile app idea to life? Get in touch!</p>
+            <div id="contactContainer" class="flex flex-col md:flex-row gap-6 justify-center"></div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="relative py-12 px-6 border-t border-purple-500/20">
         <div class="max-w-6xl mx-auto text-center">
-            <p class="text-gray-400 mb-4">
-                © 2024 Ahmed Khaled. Crafted with passion for mobile development.
-            </p>
-            <nav class="flex gap-6 justify-center" aria-label="Social links">
-                <a href="https://github.com/ahmed-khaled-z" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-400 transition-colors">GitHub</a>
-                <a href="https://www.linkedin.com/in/ahmed-khaled-123ab3130/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-400 transition-colors">LinkedIn</a>
-                <a href="https://medium.com/@ahmed.khaled.zk" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-400 transition-colors">Medium</a>
-                <a href="https://wakatime.com/@ahmedkhaledzk" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-400 transition-colors">WakaTime</a>
-            </nav>
+            <p id="footerCopyright" class="text-gray-400 mb-4"></p>
+            <nav id="footerLinks" class="flex gap-6 justify-center" aria-label="Social links"></nav>
         </div>
     </footer>
 
     <script>
         (function() {
             'use strict';
-            
-            // ============================================
-            // CONSTANTS & SVG ICONS
-            // ============================================
-            const SVG_ICONS = {
-                externalLink: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>',
-                playStore: '<svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>',
-                appStore: '<svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/></svg>'
+
+            const SVG = {
+                github: '<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>',
+                linkedin: '<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>',
+                email: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>',
+                externalLink: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>',
+                playStore: '<svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>',
+                appStore: '<svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/></svg>',
+                location: '<svg class="text-purple-400 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>',
+                phone: '<svg class="text-pink-400 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>',
+                education: '<svg class="text-blue-400 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>',
+                pkg: '<svg class="text-purple-400 mb-4 group-hover:rotate-12 transition-transform w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>'
             };
-            
-            // ============================================
-            // UTILITY FUNCTIONS
-            // ============================================
-            const Utils = {
-                throttle(callback) {
-                    let ticking = false;
-                    return function(...args) {
-                        if (!ticking) {
-                            window.requestAnimationFrame(() => {
-                                callback.apply(this, args);
-                                ticking = false;
-                            });
-                            ticking = true;
-                        }
-                    };
-                },
-                
-                createElement(tag, className, content = '') {
-                    const element = document.createElement(tag);
-                    if (className) element.className = className;
-                    if (content) element.innerHTML = content;
-                    return element;
-                },
-                
-                escapeHtml(text) {
-                    const div = document.createElement('div');
-                    div.textContent = text;
-                    return div.innerHTML;
-                }
-            };
-            
-            // ============================================
-            // DATA LOADER
-            // ============================================
-            class DataLoader {
-                static getPortfolioData() {
-                    return typeof PORTFOLIO_DATA !== 'undefined' ? PORTFOLIO_DATA : null;
-                }
+
+            const esc = (text) => { const d = document.createElement('div'); d.textContent = text; return d.innerHTML; };
+
+            function throttle(fn) {
+                let t = false;
+                return function(...a) { if (!t) { requestAnimationFrame(() => { fn.apply(this, a); t = false; }); t = true; } };
             }
-            
-            // ============================================
-            // PROJECT RENDERER
-            // ============================================
-            class ProjectRenderer {
-                static renderProjects(projects) {
-                    const container = document.getElementById('projectsContainer');
-                    if (!container || !projects) return;
-                    
-                    const fragment = document.createDocumentFragment();
-                    
-                    projects.forEach(project => {
-                        const article = this.createProjectCard(project);
-                        fragment.appendChild(article);
-                    });
-                    
-                    container.appendChild(fragment);
-                }
-                
-                static createProjectCard(project) {
-                    const article = Utils.createElement('article', 'project-card group');
-                    
-                    // Header with icon and store links
-                    const header = this.createProjectHeader(project);
-                    article.appendChild(header);
-                    
-                    // Project name
-                    const title = Utils.createElement('h3', 'text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors', Utils.escapeHtml(project.name));
-                    article.appendChild(title);
-                    
-                    // Company and year
-                    const meta = Utils.createElement('p', 'text-gray-400 text-sm mb-3', `${Utils.escapeHtml(project.company)} • ${project.year}`);
-                    article.appendChild(meta);
-                    
-                    // Description
-                    const description = Utils.createElement('p', 'text-gray-300 text-sm mb-4 leading-relaxed', Utils.escapeHtml(project.description));
-                    article.appendChild(description);
-                    
-                    // Technology tags
-                    const techContainer = this.createTechnologyTags(project.technologies);
-                    article.appendChild(techContainer);
-                    
-                    // Store links (if available)
-                    if (project.playStore || project.appStore) {
-                        const storeLinks = this.createStoreLinks(project);
-                        article.appendChild(storeLinks);
-                    }
-                    
-                    return article;
-                }
-                
-                static createProjectHeader(project) {
-                    const header = Utils.createElement('div', 'flex items-start justify-between mb-4');
-                    
-                    // Icon
-                    const icon = Utils.createElement('div', 'w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold transition-transform', Utils.escapeHtml(project.icon));
-                    header.appendChild(icon);
-                    
-                    // External link indicator (only if there are store links)
-                    if (project.playStore || project.appStore) {
-                        const linkIndicator = Utils.createElement('div', 'text-purple-400 hover:text-pink-400 transition-colors cursor-default');
-                        linkIndicator.innerHTML = SVG_ICONS.externalLink;
-                        linkIndicator.setAttribute('aria-label', 'Available on stores');
-                        header.appendChild(linkIndicator);
-                    }
-                    
-                    return header;
-                }
-                
-                static createTechnologyTags(technologies) {
-                    const container = Utils.createElement('div', 'flex flex-wrap gap-2 mb-4');
-                    
-                    technologies.forEach(tech => {
-                        const tag = Utils.createElement('span', 'px-2.5 py-1 bg-purple-500/20 hover:bg-purple-500/30 rounded-full text-xs text-purple-300 transition-all hover:scale-105', Utils.escapeHtml(tech));
-                        container.appendChild(tag);
-                    });
-                    
-                    return container;
-                }
-                
-                static createStoreLinks(project) {
-                    const container = Utils.createElement('div', 'flex gap-3 pt-2 border-t border-purple-500/10');
-                    
-                    if (project.playStore) {
-                        const playStoreLink = Utils.createElement('a', 'flex items-center px-3 py-1.5 bg-gradient-to-r from-green-500/20 to-blue-500/20 hover:from-green-500/30 hover:to-blue-500/30 rounded-lg text-xs text-gray-300 hover:text-white transition-all hover:scale-105');
-                        playStoreLink.href = project.playStore;
-                        playStoreLink.target = '_blank';
-                        playStoreLink.rel = 'noopener noreferrer';
-                        playStoreLink.setAttribute('aria-label', `View ${project.name} on Play Store`);
-                        playStoreLink.innerHTML = SVG_ICONS.playStore + '<span>Play Store</span>';
-                        container.appendChild(playStoreLink);
-                    }
-                    
-                    if (project.appStore) {
-                        const appStoreLink = Utils.createElement('a', 'flex items-center px-3 py-1.5 bg-gradient-to-r from-blue-500/20 to-purple-500/20 hover:from-blue-500/30 hover:to-purple-500/30 rounded-lg text-xs text-gray-300 hover:text-white transition-all hover:scale-105');
-                        appStoreLink.href = project.appStore;
-                        appStoreLink.target = '_blank';
-                        appStoreLink.rel = 'noopener noreferrer';
-                        appStoreLink.setAttribute('aria-label', `View ${project.name} on App Store`);
-                        appStoreLink.innerHTML = SVG_ICONS.appStore + '<span>App Store</span>';
-                        container.appendChild(appStoreLink);
-                    }
-                    
-                    return container;
-                }
+
+            // ── Render: Hero ──
+            function renderHero(d) {
+                const p = d.personal, s = d.social;
+                document.getElementById('navImage').src = p.image;
+                document.getElementById('navImage').alt = p.name;
+                document.getElementById('heroImage').src = p.image;
+                document.getElementById('heroImage').alt = p.name;
+                document.getElementById('heroName').textContent = p.name;
+                document.getElementById('heroTitle').textContent = p.title;
+                document.getElementById('heroDescription').textContent = p.description;
+                document.title = `${p.name} - ${p.title}`;
+                document.querySelector('meta[name="description"]').content = `${p.name} - ${p.title} with ${p.description}`;
+
+                const social = document.getElementById('heroSocial');
+                const links = [
+                    { url: s.github, icon: SVG.github, hover: 'hover:bg-purple-600', label: 'GitHub' },
+                    { url: s.linkedin, icon: SVG.linkedin, hover: 'hover:bg-blue-600', label: 'LinkedIn' },
+                    { url: `mailto:${p.email}`, icon: SVG.email, hover: 'hover:bg-pink-600', label: 'Email' }
+                ];
+                links.forEach(l => {
+                    const a = document.createElement('a');
+                    a.href = l.url;
+                    a.className = `p-4 bg-slate-800/50 backdrop-blur rounded-full ${l.hover} transition-all duration-300 hover:scale-110 hover:rotate-12`;
+                    a.setAttribute('aria-label', l.label);
+                    if (!l.url.startsWith('mailto:')) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+                    a.innerHTML = l.icon;
+                    social.appendChild(a);
+                });
             }
-            
-            // ============================================
-            // UI CONTROLLER
-            // ============================================
-            class UIController {
-                static initNavbar() {
-                    const navbar = document.getElementById('navbar');
-                    if (!navbar) return;
-                    
-                    const updateNavbar = Utils.throttle(() => {
-                        if (window.scrollY > 50) {
-                            navbar.classList.add('nav-scrolled');
-                        } else {
-                            navbar.classList.remove('nav-scrolled');
-                        }
-                    });
-                    
-                    window.addEventListener('scroll', updateNavbar, { passive: true });
-                }
-                
-                static initMobileMenu() {
-                    const menuBtn = document.getElementById('menuBtn');
-                    const closeMenuBtn = document.getElementById('closeMenuBtn');
-                    const mobileMenu = document.getElementById('mobileMenu');
-                    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-                    
-                    function toggleMobileMenu(show) {
-                        if (show) {
-                            mobileMenu.classList.remove('hidden');
-                            mobileMenu.classList.add('flex');
-                            menuBtn.setAttribute('aria-expanded', 'true');
-                            document.body.style.overflow = 'hidden';
-                        } else {
-                            mobileMenu.classList.add('hidden');
-                            mobileMenu.classList.remove('flex');
-                            menuBtn.setAttribute('aria-expanded', 'false');
-                            document.body.style.overflow = '';
-                        }
-                    }
-                    
-                    menuBtn?.addEventListener('click', () => toggleMobileMenu(true));
-                    closeMenuBtn?.addEventListener('click', () => toggleMobileMenu(false));
-                    
-                    mobileNavLinks.forEach(link => {
-                        link.addEventListener('click', () => toggleMobileMenu(false));
-                    });
-                }
-                
-                static initBackgroundEffect() {
-                    const bgGradient = document.getElementById('bgGradient');
-                    if (!bgGradient) return;
-                    
-                    const updateBackground = Utils.throttle((e) => {
-                        bgGradient.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(124, 58, 237, 0.3), transparent 50%)`;
-                    });
-                    
-                    document.addEventListener('mousemove', updateBackground, { passive: true });
-                }
-                
-                static initParticles() {
-                    const particlesContainer = document.getElementById('particles');
-                    if (!particlesContainer) return;
-                    
-                    const fragment = document.createDocumentFragment();
-                    for (let i = 0; i < 20; i++) {
-                        const particle = document.createElement('div');
-                        particle.className = 'particle absolute w-2 h-2 bg-purple-400 rounded-full';
-                        particle.style.left = `${Math.random() * 100}%`;
-                        particle.style.top = `${Math.random() * 100}%`;
-                        particle.style.animationDelay = `${Math.random() * 3}s`;
-                        particle.style.animationDuration = `${2 + Math.random() * 3}s`;
-                        fragment.appendChild(particle);
-                    }
-                    particlesContainer.appendChild(fragment);
-                }
+
+            // ── Render: About ──
+            function renderAbout(d) {
+                const p = d.personal, c = document.getElementById('aboutContainer');
+                const card = (icon, title, content, span2) =>
+                    `<div class="${span2 ? 'md:col-span-2 ' : ''}bg-slate-800/30 backdrop-blur-lg rounded-3xl p-8 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
+                        <div class="flex items-center gap-4 mb-4">${icon}<h3 class="text-2xl font-bold">${title}</h3></div>${content}</div>`;
+                c.innerHTML =
+                    card(SVG.location, 'Location', `<p class="text-gray-300 text-lg">${esc(p.location)}</p>`) +
+                    card(SVG.phone, 'Contact', `<p class="text-gray-300 text-lg">${esc(p.phone)}</p>`) +
+                    card(SVG.education, 'Education', `<p class="text-gray-300 text-lg">${esc(p.education.degree)}</p><p class="text-gray-400">${esc(p.education.institution)} | ${esc(p.education.period)}</p>`, true);
             }
-            
-            // ============================================
-            // APPLICATION INITIALIZER
-            // ============================================
-            class App {
-                static init() {
-                    // Initialize UI components
-                    UIController.initNavbar();
-                    UIController.initMobileMenu();
-                    UIController.initBackgroundEffect();
-                    UIController.initParticles();
-                    
-                    // Load data from portfolio-data.js (loaded via <script> tag)
-                    const data = DataLoader.getPortfolioData();
-                    if (data && data.projects) {
-                        const loadingMsg = document.getElementById('loadingMessage');
-                        if (loadingMsg) loadingMsg.remove();
-                        ProjectRenderer.renderProjects(data.projects);
-                    }
-                }
+
+            // ── Render: Experience ──
+            function renderExperience(d) {
+                const c = document.getElementById('experienceContainer');
+                c.innerHTML = d.experience.map(e =>
+                    `<div class="bg-slate-800/30 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 group">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-purple-400 group-hover:text-pink-400 transition-colors">${esc(e.title)}</h3>
+                                <p class="text-xl text-gray-300 mt-1">${esc(e.company)}</p>
+                                <p class="text-gray-400 mt-1">${esc(e.type)}</p>
+                            </div>
+                            <div class="mt-4 md:mt-0"><span class="px-4 py-2 bg-purple-500/20 rounded-full text-sm">${esc(e.period)}</span></div>
+                        </div>
+                    </div>`
+                ).join('');
             }
-            
-            // ============================================
-            // START APPLICATION
-            // ============================================
+
+            // ── Render: Skills ──
+            function renderSkills(d) {
+                const c = document.getElementById('skillsContainer');
+                c.innerHTML = d.skills.map(s =>
+                    `<div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20">
+                        <h3 class="text-xl font-bold mb-4 text-purple-400">${esc(s.category)}</h3>
+                        <div class="flex flex-wrap gap-2">${s.items.map(i => `<span class="skill-tag">${esc(i)}</span>`).join('')}</div>
+                    </div>`
+                ).join('');
+            }
+
+            // ── Render: Projects ──
+            function renderProjects(d) {
+                const c = document.getElementById('projectsContainer');
+                const lm = document.getElementById('loadingMessage');
+                if (lm) lm.remove();
+
+                c.innerHTML = d.projects.map(p => {
+                    const hasLinks = p.playStore || p.appStore;
+                    let storeHtml = '';
+                    if (hasLinks) {
+                        storeHtml = '<div class="flex gap-3 pt-2 border-t border-purple-500/10">';
+                        if (p.playStore) storeHtml += `<a href="${p.playStore}" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-1.5 bg-gradient-to-r from-green-500/20 to-blue-500/20 hover:from-green-500/30 hover:to-blue-500/30 rounded-lg text-xs text-gray-300 hover:text-white transition-all hover:scale-105">${SVG.playStore}<span>Play Store</span></a>`;
+                        if (p.appStore) storeHtml += `<a href="${p.appStore}" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-1.5 bg-gradient-to-r from-blue-500/20 to-purple-500/20 hover:from-blue-500/30 hover:to-purple-500/30 rounded-lg text-xs text-gray-300 hover:text-white transition-all hover:scale-105">${SVG.appStore}<span>App Store</span></a>`;
+                        storeHtml += '</div>';
+                    }
+                    return `<article class="project-card group">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold transition-transform">${esc(p.icon)}</div>
+                            ${hasLinks ? `<div class="text-purple-400">${SVG.externalLink}</div>` : ''}
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">${esc(p.name)}</h3>
+                        <p class="text-gray-400 text-sm mb-3">${esc(p.company)} &bull; ${p.year}</p>
+                        <p class="text-gray-300 text-sm mb-4 leading-relaxed">${esc(p.description)}</p>
+                        <div class="flex flex-wrap gap-2 mb-4">${p.technologies.map(t => `<span class="px-2.5 py-1 bg-purple-500/20 hover:bg-purple-500/30 rounded-full text-xs text-purple-300 transition-all hover:scale-105">${esc(t)}</span>`).join('')}</div>
+                        ${storeHtml}
+                    </article>`;
+                }).join('');
+            }
+
+            // ── Render: Packages ──
+            function renderPackages(d) {
+                const c = document.getElementById('packagesContainer');
+                c.innerHTML = d.packages.map(p =>
+                    `<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/30 hover:border-purple-500/70 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 group">
+                        ${SVG.pkg}<h3 class="text-lg font-bold group-hover:text-purple-400 transition-colors">${esc(p.name)}</h3>
+                    </a>`
+                ).join('');
+            }
+
+            // ── Render: Contact & Footer ──
+            function renderContactAndFooter(d) {
+                const p = d.personal, s = d.social;
+                document.getElementById('contactContainer').innerHTML =
+                    `<a href="mailto:${p.email}" class="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full font-bold text-lg hover:scale-110 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/50">Send Email</a>
+                     <a href="${s.linkedin}" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-slate-800/50 backdrop-blur border-2 border-purple-500/50 rounded-full font-bold text-lg hover:scale-110 transition-all duration-300 hover:border-purple-500">Connect on LinkedIn</a>`;
+
+                document.getElementById('footerCopyright').textContent = `© ${new Date().getFullYear()} ${p.name}. Crafted with passion for mobile development.`;
+                const fl = document.getElementById('footerLinks');
+                const footerItems = [
+                    { label: 'GitHub', url: s.github },
+                    { label: 'LinkedIn', url: s.linkedin },
+                    { label: 'Medium', url: s.medium },
+                    { label: 'WakaTime', url: s.wakatime }
+                ];
+                fl.innerHTML = footerItems.map(i =>
+                    `<a href="${i.url}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-400 transition-colors">${i.label}</a>`
+                ).join('');
+            }
+
+            // ── UI Effects ──
+            function initUI() {
+                const navbar = document.getElementById('navbar');
+                window.addEventListener('scroll', throttle(() => navbar.classList.toggle('nav-scrolled', scrollY > 50)), { passive: true });
+
+                const menuBtn = document.getElementById('menuBtn'), closeBtn = document.getElementById('closeMenuBtn'), menu = document.getElementById('mobileMenu');
+                const toggle = (show) => { menu.classList.toggle('hidden', !show); menu.classList.toggle('flex', show); menuBtn.setAttribute('aria-expanded', show); document.body.style.overflow = show ? 'hidden' : ''; };
+                menuBtn?.addEventListener('click', () => toggle(true));
+                closeBtn?.addEventListener('click', () => toggle(false));
+                document.querySelectorAll('.mobile-nav-link').forEach(l => l.addEventListener('click', () => toggle(false)));
+
+                const bg = document.getElementById('bgGradient');
+                document.addEventListener('mousemove', throttle(e => { if (bg) bg.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(124,58,237,0.3), transparent 50%)`; }), { passive: true });
+
+                const pc = document.getElementById('particles');
+                if (pc) { const f = document.createDocumentFragment(); for (let i = 0; i < 20; i++) { const p = document.createElement('div'); p.className = 'particle absolute w-2 h-2 bg-purple-400 rounded-full'; p.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*3}s;animation-duration:${2+Math.random()*3}s`; f.appendChild(p); } pc.appendChild(f); }
+            }
+
+            // ── Init ──
+            function init() {
+                const data = typeof PORTFOLIO_DATA !== 'undefined' ? PORTFOLIO_DATA : null;
+                if (!data) return;
+                renderHero(data);
+                renderAbout(data);
+                renderExperience(data);
+                renderSkills(data);
+                renderProjects(data);
+                renderPackages(data);
+                renderContactAndFooter(data);
+                initUI();
+            }
+
             if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', App.init);
+                document.addEventListener('DOMContentLoaded', init);
             } else {
-                App.init();
+                init();
             }
         })();
     </script>
