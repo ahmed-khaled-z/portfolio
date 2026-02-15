@@ -6,6 +6,7 @@
     <title>Ahmed ahmed - Mobile Developer</title>
     <meta name="description" content="Ahmed Khaled - Mobile Developer with 5+ years experience in Flutter, Kotlin & Java">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="portfolio-data.js"></script>
     <style>
         @keyframes gradient {
             0%, 100% { background-position: 0% 50%; }
@@ -601,48 +602,8 @@
             // DATA LOADER
             // ============================================
             class DataLoader {
-                static async loadPortfolioData() {
-                    try {
-                        // Try to load from external JSON file first
-                        const response = await fetch('portfolio-data.json');
-                        if (!response.ok) throw new Error('Failed to load portfolio data');
-                        const data = await response.json();
-                        console.log('✅ Portfolio data loaded from portfolio-data.json');
-                        return data;
-                    } catch (error) {
-                        console.error('❌ Error loading portfolio-data.json:', error);
-                        console.error('💡 Make sure to run a local server:');
-                        console.error('   python -m http.server 8000');
-                        console.error('   Then open: http://localhost:8000');
-                        return null;
-                    }
-                }
-                
-                static showErrorMessage() {
-                    const container = document.getElementById('projectsContainer');
-                    const loadingMsg = document.getElementById('loadingMessage');
-                    if (loadingMsg) loadingMsg.remove();
-                    
-                    if (container) {
-                        container.innerHTML = `
-                            <div class="col-span-full text-center py-12">
-                                <div class="bg-red-500/10 border border-red-500/30 rounded-2xl p-8 max-w-2xl mx-auto">
-                                    <svg class="w-16 h-16 text-red-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                                    </svg>
-                                    <h3 class="text-xl font-bold text-red-400 mb-3">Unable to Load Projects</h3>
-                                    <p class="text-gray-300 mb-4">Cannot load portfolio-data.json. This happens when opening the file directly.</p>
-                                    <div class="bg-slate-800/50 rounded-lg p-4 text-left mb-4">
-                                        <p class="text-sm text-gray-400 mb-2 font-bold">✅ Solution: Run a local web server</p>
-                                        <code class="block text-sm text-green-400 mb-1">python -m http.server 8000</code>
-                                        <p class="text-xs text-gray-500 mt-2">Then open: <span class="text-purple-400">http://localhost:8000</span></p>
-                                        <p class="text-xs text-gray-500 mt-3">Or double-click: <span class="text-purple-400">start-server.bat</span></p>
-                                    </div>
-                                    <p class="text-xs text-gray-400">See QUICKSTART.md or START-HERE.txt for detailed instructions</p>
-                                </div>
-                            </div>
-                        `;
-                    }
+                static getPortfolioData() {
+                    return typeof PORTFOLIO_DATA !== 'undefined' ? PORTFOLIO_DATA : null;
                 }
             }
             
@@ -832,22 +793,19 @@
             // APPLICATION INITIALIZER
             // ============================================
             class App {
-                static async init() {
+                static init() {
                     // Initialize UI components
                     UIController.initNavbar();
                     UIController.initMobileMenu();
                     UIController.initBackgroundEffect();
                     UIController.initParticles();
                     
-                    // Load and render data from external JSON file
-                    const data = await DataLoader.loadPortfolioData();
+                    // Load data from portfolio-data.js (loaded via <script> tag)
+                    const data = DataLoader.getPortfolioData();
                     if (data && data.projects) {
                         const loadingMsg = document.getElementById('loadingMessage');
                         if (loadingMsg) loadingMsg.remove();
                         ProjectRenderer.renderProjects(data.projects);
-                    } else {
-                        // Show helpful error message if loading fails
-                        DataLoader.showErrorMessage();
                     }
                 }
             }
@@ -856,7 +814,7 @@
             // START APPLICATION
             // ============================================
             if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', () => App.init());
+                document.addEventListener('DOMContentLoaded', App.init);
             } else {
                 App.init();
             }
