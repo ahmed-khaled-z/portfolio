@@ -88,12 +88,36 @@
             padding: 1.5rem;
             border: 1px solid rgba(168, 85, 247, 0.2);
             transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover {
             border-color: rgba(168, 85, 247, 0.5);
-            transform: scale(1.05);
+            transform: translateY(-8px);
             box-shadow: 0 25px 50px -12px rgba(168, 85, 247, 0.3);
+        }
+
+        .tech-tag {
+            transition: all 0.2s ease;
+        }
+
+        .tech-tag:hover {
+            transform: translateY(-2px);
+        }
+
+        .store-link {
+            transition: all 0.3s ease;
+        }
+
+        .store-link:hover {
+            transform: translateX(2px);
+        }
+
+        @media (max-width: 768px) {
+            .project-card:hover {
+                transform: translateY(-4px);
+            }
         }
     </style>
 </head>
@@ -453,199 +477,11 @@
                 Projects
             </h2>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <article class="project-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">M</div>
-                        <a href="https://play.google.com/store/apps/details?id=com.elmtwer.canteen" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-pink-400 transition-colors" aria-label="View MQASEF on Play Store">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">MQASEF</h3>
-                    <p class="text-gray-400 text-sm mb-2">Watania Solutions • 2024</p>
-                    <p class="text-gray-300">Canteen App</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">P</div>
-                        <a href="https://play.google.com/store/apps/details?id=com.elmadar.pressx" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-pink-400 transition-colors" aria-label="View PressX on Play Store">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">PressX</h3>
-                    <p class="text-gray-400 text-sm mb-2">PressX • 2022</p>
-                    <p class="text-gray-300">PlayStation Cafe Management</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">P</div>
-                        <a href="https://play.google.com/store/apps/details?id=com.technosignage.fca" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-pink-400 transition-colors" aria-label="View PERFOGAUGE on Play Store">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">PERFOGAUGE</h3>
-                    <p class="text-gray-400 text-sm mb-2">Technosignage • 2022</p>
-                    <p class="text-gray-300">KPI Tracking App</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">E</div>
-                        <a href="https://play.google.com/store/apps/details?id=com.evkumpara.webdivs.evkumpara" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-pink-400 transition-colors" aria-label="View EVKUMBARA on Play Store">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">EVKUMBARA</h3>
-                    <p class="text-gray-400 text-sm mb-2">WebDivs • 2022</p>
-                    <p class="text-gray-300">Real Estate Investment</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">M</div>
-                        <a href="https://play.google.com/store/apps/details?id=xdev.mool" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-pink-400 transition-colors" aria-label="View MOOL on Play Store">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">MOOL</h3>
-                    <p class="text-gray-400 text-sm mb-2">XDev • 2022</p>
-                    <p class="text-gray-300">E-commerce (Kotlin)</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">T</div>
-                        <a href="https://play.google.com/store/apps/details?id=com.apptechegy.trackhom" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-pink-400 transition-colors" aria-label="View TRACKHOM on Play Store">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">TRACKHOM</h3>
-                    <p class="text-gray-400 text-sm mb-2">AppTech EGY • 2021</p>
-                    <p class="text-gray-300">Children Tracking App</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">I</div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">IHOME</h3>
-                    <p class="text-gray-400 text-sm mb-2">WebDivs • 2024</p>
-                    <p class="text-gray-300">Compound System</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">C</div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">CAR RENTAL</h3>
-                    <p class="text-gray-400 text-sm mb-2">Watania Solutions • 2023</p>
-                    <p class="text-gray-300">Car Rental App</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">H</div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">HOUSE OF WARRIORS</h3>
-                    <p class="text-gray-400 text-sm mb-2">WebDivs • 2023</p>
-                    <p class="text-gray-300">Gym App</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">H</div>
-                        <a href="https://play.google.com/store/apps/details?id=com.xdev.hajoj" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-pink-400 transition-colors" aria-label="View HOJOJ on Play Store">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">HOJOJ</h3>
-                    <p class="text-gray-400 text-sm mb-2">XDev • 2022</p>
-                    <p class="text-gray-300">E-commerce (Java)</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">S</div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">SHAREWINDS BOOKING APP</h3>
-                    <p class="text-gray-400 text-sm mb-2">Technosignage • 2022</p>
-                    <p class="text-gray-300">Booking System</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">M</div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">MISR ELKHEIR</h3>
-                    <p class="text-gray-400 text-sm mb-2">ThePlanet • 2022</p>
-                    <p class="text-gray-300">Donation App</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">Z</div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">ZADULTAQWA</h3>
-                    <p class="text-gray-400 text-sm mb-2">ThePlanet • 2022</p>
-                    <p class="text-gray-300">Online Learning App</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">S</div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">SHAREWINDS MAIN SIGN</h3>
-                    <p class="text-gray-400 text-sm mb-2">Technosignage • 2021</p>
-                    <p class="text-gray-300">Booking System (Java)</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">S</div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">SHAREWINDS DOOR SIGN</h3>
-                    <p class="text-gray-400 text-sm mb-2">Technosignage • 2021</p>
-                    <p class="text-gray-300">Booking System (Java)</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">S</div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">SHAREWINDS WAYFINDING</h3>
-                    <p class="text-gray-400 text-sm mb-2">Technosignage • 2021</p>
-                    <p class="text-gray-300">Way Finder App (Java)</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold group-hover:rotate-12 transition-transform">C</div>
-                        <a href="https://play.google.com/store/apps/details?id=com.apptechegy.chalet_booking" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-pink-400 transition-colors" aria-label="View CHALIHE BOOK on Play Store">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">CHALIHE BOOK</h3>
-                    <p class="text-gray-400 text-sm mb-2">AppTech EGY • 2020</p>
-                    <p class="text-gray-300">Chalet Booking App (Java)</p>
-                </article>
+            <div id="projectsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Projects will be dynamically loaded here -->
+                <div class="col-span-full text-center text-gray-400" id="loadingMessage">
+                    Loading projects...
+                </div>
             </div>
         </div>
     </section>
@@ -721,85 +557,308 @@
         (function() {
             'use strict';
             
-            // Navbar scroll effect with throttling
-            let ticking = false;
-            const navbar = document.getElementById('navbar');
+            // ============================================
+            // CONSTANTS & SVG ICONS
+            // ============================================
+            const SVG_ICONS = {
+                externalLink: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>',
+                playStore: '<svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>',
+                appStore: '<svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/></svg>'
+            };
             
-            function updateNavbar() {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('nav-scrolled');
-                } else {
-                    navbar.classList.remove('nav-scrolled');
+            // ============================================
+            // UTILITY FUNCTIONS
+            // ============================================
+            const Utils = {
+                throttle(callback) {
+                    let ticking = false;
+                    return function(...args) {
+                        if (!ticking) {
+                            window.requestAnimationFrame(() => {
+                                callback.apply(this, args);
+                                ticking = false;
+                            });
+                            ticking = true;
+                        }
+                    };
+                },
+                
+                createElement(tag, className, content = '') {
+                    const element = document.createElement(tag);
+                    if (className) element.className = className;
+                    if (content) element.innerHTML = content;
+                    return element;
+                },
+                
+                escapeHtml(text) {
+                    const div = document.createElement('div');
+                    div.textContent = text;
+                    return div.innerHTML;
                 }
-                ticking = false;
+            };
+            
+            // ============================================
+            // DATA LOADER
+            // ============================================
+            class DataLoader {
+                static async loadPortfolioData() {
+                    try {
+                        // Try to load from external JSON file first
+                        const response = await fetch('portfolio-data.json');
+                        if (!response.ok) throw new Error('Failed to load portfolio data');
+                        const data = await response.json();
+                        console.log('✅ Portfolio data loaded from portfolio-data.json');
+                        return data;
+                    } catch (error) {
+                        console.error('❌ Error loading portfolio-data.json:', error);
+                        console.error('💡 Make sure to run a local server:');
+                        console.error('   python -m http.server 8000');
+                        console.error('   Then open: http://localhost:8000');
+                        return null;
+                    }
+                }
+                
+                static showErrorMessage() {
+                    const container = document.getElementById('projectsContainer');
+                    const loadingMsg = document.getElementById('loadingMessage');
+                    if (loadingMsg) loadingMsg.remove();
+                    
+                    if (container) {
+                        container.innerHTML = `
+                            <div class="col-span-full text-center py-12">
+                                <div class="bg-red-500/10 border border-red-500/30 rounded-2xl p-8 max-w-2xl mx-auto">
+                                    <svg class="w-16 h-16 text-red-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                    </svg>
+                                    <h3 class="text-xl font-bold text-red-400 mb-3">Unable to Load Projects</h3>
+                                    <p class="text-gray-300 mb-4">Cannot load portfolio-data.json. This happens when opening the file directly.</p>
+                                    <div class="bg-slate-800/50 rounded-lg p-4 text-left mb-4">
+                                        <p class="text-sm text-gray-400 mb-2 font-bold">✅ Solution: Run a local web server</p>
+                                        <code class="block text-sm text-green-400 mb-1">python -m http.server 8000</code>
+                                        <p class="text-xs text-gray-500 mt-2">Then open: <span class="text-purple-400">http://localhost:8000</span></p>
+                                        <p class="text-xs text-gray-500 mt-3">Or double-click: <span class="text-purple-400">start-server.bat</span></p>
+                                    </div>
+                                    <p class="text-xs text-gray-400">See QUICKSTART.md or START-HERE.txt for detailed instructions</p>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
             }
             
-            window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    window.requestAnimationFrame(updateNavbar);
-                    ticking = true;
+            // ============================================
+            // PROJECT RENDERER
+            // ============================================
+            class ProjectRenderer {
+                static renderProjects(projects) {
+                    const container = document.getElementById('projectsContainer');
+                    if (!container || !projects) return;
+                    
+                    const fragment = document.createDocumentFragment();
+                    
+                    projects.forEach(project => {
+                        const article = this.createProjectCard(project);
+                        fragment.appendChild(article);
+                    });
+                    
+                    container.appendChild(fragment);
                 }
-            }, { passive: true });
-
-            // Mobile menu toggle
-            const menuBtn = document.getElementById('menuBtn');
-            const closeMenuBtn = document.getElementById('closeMenuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-            function toggleMobileMenu(show) {
-                if (show) {
-                    mobileMenu.classList.remove('hidden');
-                    mobileMenu.classList.add('flex');
-                    menuBtn.setAttribute('aria-expanded', 'true');
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('flex');
-                    menuBtn.setAttribute('aria-expanded', 'false');
-                    document.body.style.overflow = '';
+                
+                static createProjectCard(project) {
+                    const article = Utils.createElement('article', 'project-card group');
+                    
+                    // Header with icon and store links
+                    const header = this.createProjectHeader(project);
+                    article.appendChild(header);
+                    
+                    // Project name
+                    const title = Utils.createElement('h3', 'text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors', Utils.escapeHtml(project.name));
+                    article.appendChild(title);
+                    
+                    // Company and year
+                    const meta = Utils.createElement('p', 'text-gray-400 text-sm mb-3', `${Utils.escapeHtml(project.company)} • ${project.year}`);
+                    article.appendChild(meta);
+                    
+                    // Description
+                    const description = Utils.createElement('p', 'text-gray-300 text-sm mb-4 leading-relaxed', Utils.escapeHtml(project.description));
+                    article.appendChild(description);
+                    
+                    // Technology tags
+                    const techContainer = this.createTechnologyTags(project.technologies);
+                    article.appendChild(techContainer);
+                    
+                    // Store links (if available)
+                    if (project.playStore || project.appStore) {
+                        const storeLinks = this.createStoreLinks(project);
+                        article.appendChild(storeLinks);
+                    }
+                    
+                    return article;
+                }
+                
+                static createProjectHeader(project) {
+                    const header = Utils.createElement('div', 'flex items-start justify-between mb-4');
+                    
+                    // Icon
+                    const icon = Utils.createElement('div', 'w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold transition-transform', Utils.escapeHtml(project.icon));
+                    header.appendChild(icon);
+                    
+                    // External link indicator (only if there are store links)
+                    if (project.playStore || project.appStore) {
+                        const linkIndicator = Utils.createElement('div', 'text-purple-400 hover:text-pink-400 transition-colors cursor-default');
+                        linkIndicator.innerHTML = SVG_ICONS.externalLink;
+                        linkIndicator.setAttribute('aria-label', 'Available on stores');
+                        header.appendChild(linkIndicator);
+                    }
+                    
+                    return header;
+                }
+                
+                static createTechnologyTags(technologies) {
+                    const container = Utils.createElement('div', 'flex flex-wrap gap-2 mb-4');
+                    
+                    technologies.forEach(tech => {
+                        const tag = Utils.createElement('span', 'px-2.5 py-1 bg-purple-500/20 hover:bg-purple-500/30 rounded-full text-xs text-purple-300 transition-all hover:scale-105', Utils.escapeHtml(tech));
+                        container.appendChild(tag);
+                    });
+                    
+                    return container;
+                }
+                
+                static createStoreLinks(project) {
+                    const container = Utils.createElement('div', 'flex gap-3 pt-2 border-t border-purple-500/10');
+                    
+                    if (project.playStore) {
+                        const playStoreLink = Utils.createElement('a', 'flex items-center px-3 py-1.5 bg-gradient-to-r from-green-500/20 to-blue-500/20 hover:from-green-500/30 hover:to-blue-500/30 rounded-lg text-xs text-gray-300 hover:text-white transition-all hover:scale-105');
+                        playStoreLink.href = project.playStore;
+                        playStoreLink.target = '_blank';
+                        playStoreLink.rel = 'noopener noreferrer';
+                        playStoreLink.setAttribute('aria-label', `View ${project.name} on Play Store`);
+                        playStoreLink.innerHTML = SVG_ICONS.playStore + '<span>Play Store</span>';
+                        container.appendChild(playStoreLink);
+                    }
+                    
+                    if (project.appStore) {
+                        const appStoreLink = Utils.createElement('a', 'flex items-center px-3 py-1.5 bg-gradient-to-r from-blue-500/20 to-purple-500/20 hover:from-blue-500/30 hover:to-purple-500/30 rounded-lg text-xs text-gray-300 hover:text-white transition-all hover:scale-105');
+                        appStoreLink.href = project.appStore;
+                        appStoreLink.target = '_blank';
+                        appStoreLink.rel = 'noopener noreferrer';
+                        appStoreLink.setAttribute('aria-label', `View ${project.name} on App Store`);
+                        appStoreLink.innerHTML = SVG_ICONS.appStore + '<span>App Store</span>';
+                        container.appendChild(appStoreLink);
+                    }
+                    
+                    return container;
                 }
             }
-
-            menuBtn?.addEventListener('click', () => toggleMobileMenu(true));
-            closeMenuBtn?.addEventListener('click', () => toggleMobileMenu(false));
-
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', () => toggleMobileMenu(false));
-            });
-
-            // Mouse move effect for background with throttling
-            let mouseTicking = false;
-            const bgGradient = document.getElementById('bgGradient');
             
-            function updateBackground(e) {
-                if (bgGradient) {
-                    bgGradient.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(124, 58, 237, 0.3), transparent 50%)`;
+            // ============================================
+            // UI CONTROLLER
+            // ============================================
+            class UIController {
+                static initNavbar() {
+                    const navbar = document.getElementById('navbar');
+                    if (!navbar) return;
+                    
+                    const updateNavbar = Utils.throttle(() => {
+                        if (window.scrollY > 50) {
+                            navbar.classList.add('nav-scrolled');
+                        } else {
+                            navbar.classList.remove('nav-scrolled');
+                        }
+                    });
+                    
+                    window.addEventListener('scroll', updateNavbar, { passive: true });
                 }
-                mouseTicking = false;
+                
+                static initMobileMenu() {
+                    const menuBtn = document.getElementById('menuBtn');
+                    const closeMenuBtn = document.getElementById('closeMenuBtn');
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+                    
+                    function toggleMobileMenu(show) {
+                        if (show) {
+                            mobileMenu.classList.remove('hidden');
+                            mobileMenu.classList.add('flex');
+                            menuBtn.setAttribute('aria-expanded', 'true');
+                            document.body.style.overflow = 'hidden';
+                        } else {
+                            mobileMenu.classList.add('hidden');
+                            mobileMenu.classList.remove('flex');
+                            menuBtn.setAttribute('aria-expanded', 'false');
+                            document.body.style.overflow = '';
+                        }
+                    }
+                    
+                    menuBtn?.addEventListener('click', () => toggleMobileMenu(true));
+                    closeMenuBtn?.addEventListener('click', () => toggleMobileMenu(false));
+                    
+                    mobileNavLinks.forEach(link => {
+                        link.addEventListener('click', () => toggleMobileMenu(false));
+                    });
+                }
+                
+                static initBackgroundEffect() {
+                    const bgGradient = document.getElementById('bgGradient');
+                    if (!bgGradient) return;
+                    
+                    const updateBackground = Utils.throttle((e) => {
+                        bgGradient.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(124, 58, 237, 0.3), transparent 50%)`;
+                    });
+                    
+                    document.addEventListener('mousemove', updateBackground, { passive: true });
+                }
+                
+                static initParticles() {
+                    const particlesContainer = document.getElementById('particles');
+                    if (!particlesContainer) return;
+                    
+                    const fragment = document.createDocumentFragment();
+                    for (let i = 0; i < 20; i++) {
+                        const particle = document.createElement('div');
+                        particle.className = 'particle absolute w-2 h-2 bg-purple-400 rounded-full';
+                        particle.style.left = `${Math.random() * 100}%`;
+                        particle.style.top = `${Math.random() * 100}%`;
+                        particle.style.animationDelay = `${Math.random() * 3}s`;
+                        particle.style.animationDuration = `${2 + Math.random() * 3}s`;
+                        fragment.appendChild(particle);
+                    }
+                    particlesContainer.appendChild(fragment);
+                }
             }
             
-            document.addEventListener('mousemove', (e) => {
-                if (!mouseTicking) {
-                    window.requestAnimationFrame(() => updateBackground(e));
-                    mouseTicking = true;
+            // ============================================
+            // APPLICATION INITIALIZER
+            // ============================================
+            class App {
+                static async init() {
+                    // Initialize UI components
+                    UIController.initNavbar();
+                    UIController.initMobileMenu();
+                    UIController.initBackgroundEffect();
+                    UIController.initParticles();
+                    
+                    // Load and render data from external JSON file
+                    const data = await DataLoader.loadPortfolioData();
+                    if (data && data.projects) {
+                        const loadingMsg = document.getElementById('loadingMessage');
+                        if (loadingMsg) loadingMsg.remove();
+                        ProjectRenderer.renderProjects(data.projects);
+                    } else {
+                        // Show helpful error message if loading fails
+                        DataLoader.showErrorMessage();
+                    }
                 }
-            }, { passive: true });
-
-            // Generate particles
-            const particlesContainer = document.getElementById('particles');
-            if (particlesContainer) {
-                const fragment = document.createDocumentFragment();
-                for (let i = 0; i < 20; i++) {
-                    const particle = document.createElement('div');
-                    particle.className = 'particle absolute w-2 h-2 bg-purple-400 rounded-full';
-                    particle.style.left = `${Math.random() * 100}%`;
-                    particle.style.top = `${Math.random() * 100}%`;
-                    particle.style.animationDelay = `${Math.random() * 3}s`;
-                    particle.style.animationDuration = `${2 + Math.random() * 3}s`;
-                    fragment.appendChild(particle);
-                }
-                particlesContainer.appendChild(fragment);
+            }
+            
+            // ============================================
+            // START APPLICATION
+            // ============================================
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => App.init());
+            } else {
+                App.init();
             }
         })();
     </script>
