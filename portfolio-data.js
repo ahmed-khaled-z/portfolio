@@ -178,7 +178,40 @@ const PORTFOLIO_DATA = {
       "playStore": null,
       "appStore": null,
       "icon": "S"
-    }
+    },
+    {
+      "name": "Klu",
+      "company": "WSC",
+      "year": "2024",
+      "description": "Comprehensive spa and salon booking platform enabling customers to discover, book, and manage beauty service appointments with features including branch search and filtering, real-time availability checking, saved favorites, appointment management, service reviews and ratings, promotional codes, multi-language support (Arabic/English), and location-based branch discovery with Google Maps integration.",
+      "shortDescription": "Spa & Salon Booking Platform",
+      "technologies": ["Flutter", "Riverpod", "Firebase", "Google Maps", "Clean Architecture", "Easy Localization"],
+      "playStore": "https://play.google.com/store/apps/details?id=com.klu.customer",
+      "appStore": "https://testflight.apple.com/join/7VYKyD4K,
+      "icon": "K"
+    },
+    {
+      "name": "KLU Employee",
+      "company": "WSC",
+      "year": "2024",
+      "description": "Mobile app for KLU business partners to manage their business: appointments, services, team, calendar, reports (sales, clients, appointments, shifts, time-off), reviews, notifications, profile, and policy documents. Integrates with KLU booking platform (klubooking.com) with OAuth, Firebase push notifications, and multi-flavor API environments.",
+      "shortDescription": "KLU Business Partner – Manage your business easily",
+      "technologies": [
+        "Flutter",
+        "Riverpod",
+        "Clean Architecture",
+        "Dio",
+        "Firebase (FCM)",
+        "OAuth (AppAuth)",
+        "easy_localization",
+        "Google Maps",
+        "Syncfusion Calendar & Charts",
+        "GetIt"
+      ],
+      "playStore": "https://play.google.com/store/apps/details?id=com.klu.employee",
+      "appStore": "https://testflight.apple.com/join/R3XqrXSY,
+      "icon": "K"
+    },
   ],
   "packages": [
     {
