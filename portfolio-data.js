@@ -209,7 +209,7 @@ const PORTFOLIO_DATA = {
         "GetIt"
       ],
       "playStore": "https://play.google.com/store/apps/details?id=com.klu.employee",
-      "appStore": "https://testflight.apple.com/join/R3XqrXSY,
+      "appStore": "https://testflight.apple.com/join/R3XqrXSY",
       "icon": "K"
     },
   ],
