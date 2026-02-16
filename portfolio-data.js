@@ -187,7 +187,7 @@ const PORTFOLIO_DATA = {
       "shortDescription": "Spa & Salon Booking Platform",
       "technologies": ["Flutter", "Riverpod", "Firebase", "Google Maps", "Clean Architecture", "Easy Localization"],
       "playStore": "https://play.google.com/store/apps/details?id=com.klu.customer",
-      "appStore": "https://testflight.apple.com/join/7VYKyD4K,
+      "appStore": "https://testflight.apple.com/join/7VYKyD4K",
       "icon": "K"
     },
     {
