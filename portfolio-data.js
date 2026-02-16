@@ -9,7 +9,7 @@ const PORTFOLIO_DATA = {
   "personal": {
     "name": "Ahmed Khaled",
     "title": "Mobile Developer",
-    "description": "5+ years crafting exceptional mobile experiences with Flutter, Kotlin & Java",
+    "description": "I'm a software engineer with over 5 years of experience in technology, specializing in mobile app development. I am passionate about creating efficient and innovative software solutions, always staying abreast of new technologies and best practices to deliver exceptional user experiences.",
     "image": "image.jpeg",
     "location": "Cairo, Egypt",
     "phone": "+20 106 934 3393",
@@ -64,89 +64,90 @@ const PORTFOLIO_DATA = {
       "period": "Aug 2020 - Apr 2021"
     }
   ],
- "skills": [
-  {
-    "category": "Platforms",
-    "items": [
-      "Flutter (Web - Android - iOS)",
-      "Android Native (Java - Kotlin)",
-      "Laravel"
-    ]
-  },
-  {
-    "category": "Architecture",
-    "items": [
-      "Clean Architecture",
-      "SOLID Principles",
-      "Design Patterns",
-      "MVVM",
-      "Version Control (Git)",
-      "Dependency Injection"
-    ]
-  },
-  {
-    "category": "Advanced",
-    "items": [
-      "Serverpod",
-      "CI/CD (Azure Pipelines - GitHub Actions)",
-      "Docker & Containerization",
-      "Performance Optimization",
-      "Memory Management",
-      "App Security Best Practices",
-      "Testing (Unit - Widget - Integration)",
-      "Crash Analysis & Debugging",
-      "Background Services",
-      "Deep Linking"
-    ]
-  },
-  {
-    "category": "State Management",
-    "items": [
-      "Provider",
-      "Bloc / Cubit",
-      "Riverpod"
-    ]
-  },
-  {
-    "category": "Integration",
-    "items": [
-      "REST APIs",
-      "GraphQL",
-      "WebSockets (Socket.io)",
-      "Firebase (Auth - Firestore - Messaging)",
-      "Google Maps & Mapbox",
-      "Payment Gateways",
-      "Push Notifications",
-      "Realtime Tracking Systems"
-    ]
-  },
-  {
-    "category": "DevOps",
-    "items": [
-      "Azure Pipelines",
-      "GitHub Actions",
-      "Firebase Hosting Deployment",
-      "Environment Management",
-      "Release Management"
-    ]
-  },
-  {
-    "category": "Soft Skills",
-    "items": [
-      "Technical Leadership",
-      "Code Review",
-      "Team Mentoring",
-      "Communication",
-      "Self Learning",
-      "Technical Documentation",
-      "Time Estimation",
-      "Problem Solving",
-      "UX Awareness",
-      "Decision Making",
-      "Conflict Resolution"
-    ]
-  }
-],
+  "skills": [
+    {
+      "category": "Platforms",
+      "items": [
+        "Flutter (Web - Android - iOS)",
+        "Android Native (Java - Kotlin)",
+        "Laravel"
+      ]
+    },
+    {
+      "category": "State Management",
+      "items": [
+        "Provider",
+        "Bloc / Cubit",
+        "Riverpod"
+      ]
+    },
+    {
+      "category": "DevOps",
+      "items": [
+        "Azure Pipelines",
+        "GitHub Actions",
+        "Firebase Hosting Deployment",
+        "Environment Management",
+        "Release Management"
+      ]
+    },
+    {
+      "category": "Advanced",
+      "items": [
+        "Serverpod",
+        "CI/CD (Azure Pipelines - GitHub Actions)",
+        "Docker & Containerization",
+        "Performance Optimization",
+        "Memory Management",
+        "App Security Best Practices",
+        "Testing (Unit - Widget - Integration)",
+        "Crash Analysis & Debugging",
+        "Background Services",
+        "Deep Linking"
+      ]
+    },
+
+    {
+      "category": "Integration",
+      "items": [
+        "REST APIs",
+        "GraphQL",
+        "WebSockets (Socket.io)",
+        "Firebase (Auth - Firestore - Messaging)",
+        "Google Maps & Mapbox",
+        "Payment Gateways",
+        "Push Notifications",
+        "Realtime Tracking Systems"
+      ]
+    },
+    {
+      "category": "Soft Skills",
+      "items": [
+        "Technical Leadership",
+        "Code Review",
+        "Team Mentoring",
+        "Communication",
+        "Self Learning",
+        "Technical Documentation",
+        "Time Estimation",
+        "Problem Solving",
+        "UX Awareness",
+        "Decision Making",
+        "Conflict Resolution"
+      ]
+    },
+    {
+      "category": "Architecture",
+      "items": [
+        "Clean Architecture",
+        "SOLID Principles",
+        "Design Patterns",
+        "MVVM",
+        "Version Control (Git)",
+        "Dependency Injection"
+      ]
+    }
+  ],
   "projects": [
     {
       "name": "Routz",
