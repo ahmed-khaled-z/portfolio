@@ -163,12 +163,12 @@ const PORTFOLIO_DATA = {
       "shortDescription": "School Bus Tracking for Parents",
       "technologies": ["Flutter", "Bloc", "Google Maps", "Firebase", "Socket.IO", "Sentry", "Clean Architecture", "PayTabs"],
       "playStore": "https://play.google.com/store/apps/details?id=me.routz.routz",
-      "appStore": "https://apps.apple.com/app/id<APP_ID>",
+      "appStore": "https://apps.apple.com/sa/app/routz-me/id6636496294",
       "icon": "R"
     },
     {
       "name": "Routz Captain",
-      "company": "Routz",
+      "company": "Schoolz",
       "year": "2024",
       "description": "A driver-facing transportation management app featuring real-time trip tracking with Google Maps, passenger status management, background location services, Socket.io live updates, QR-based student verification for school routes, periodic camera capture, push notifications, and multi-language (EN/AR) support — built with clean architecture and BLoC state management.",
       "shortDescription": "Transportation Driver Management",
@@ -251,7 +251,7 @@ const PORTFOLIO_DATA = {
       "shortDescription": "Spa & Salon Booking Platform",
       "technologies": ["Flutter", "Riverpod", "Firebase", "Google Maps", "Clean Architecture", "Easy Localization"],
       "playStore": "https://play.google.com/store/apps/details?id=com.klu.customer",
-      "appStore": "https://testflight.apple.com/join/7VYKyD4K",
+      "appStore": "https://apps.apple.com/sa/app/klu-customer/id6737692623",
       "icon": "K"
     },
     {
@@ -273,8 +273,19 @@ const PORTFOLIO_DATA = {
         "GetIt"
       ],
       "playStore": "https://play.google.com/store/apps/details?id=com.klu.employee",
-      "appStore": "https://testflight.apple.com/join/R3XqrXSY",
+      "appStore": "https://apps.apple.com/sa/app/klu-employee/id6738188349",
       "icon": "K"
+    },
+    {
+      "name": "Schoolz",
+      "company": "Schoolz",
+      "year": "2022",
+      "description": "Real-time school bus tracking and management app for parents, featuring live GPS trip monitoring, student and authorized delegate management with signature capture, push notifications for trip updates, trip history with live photos, and multi-language support (Arabic/English) — part of the Schoolz transportation ecosystem.",
+      "shortDescription": "School Bus Tracking for Parents",
+      "technologies": ["Flutter", "Bloc", "Google Maps", "Firebase", "Socket.IO", "Sentry", "Clean Architecture", "PayTabs"],
+      "playStore": "https://play.google.com/store/apps/details?id=com.schoolz.io",
+      "appStore": "https://apps.apple.com/sa/app/schoolz-parent/id1530728254",
+      "icon": "S"
     },
   ],
   "packages": [
