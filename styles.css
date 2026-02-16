@@ -688,6 +688,57 @@ a {
     height: 20px;
 }
 
+/* Download CV Button */
+.download-cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 2rem;
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 20px rgba(124, 91, 245, 0.3);
+}
+
+.download-cv-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    border-radius: inherit;
+}
+
+.download-cv-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(124, 91, 245, 0.45);
+}
+
+.download-cv-btn:hover::before {
+    opacity: 1;
+}
+
+.download-cv-btn:active {
+    transform: translateY(-1px);
+}
+
+.download-cv-btn svg,
+.download-cv-btn span {
+    position: relative;
+    z-index: 1;
+}
+
 /* Scroll Indicator */
 .scroll-indicator {
     display: flex;

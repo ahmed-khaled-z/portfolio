@@ -34,6 +34,12 @@ const PORTFOLIO_DATA = {
       "period": "Jul 2023 - Present"
     },
     {
+      "title": "SENIOR MOBILE DEVELOPER",
+      "company": "Schoolz",
+      "type": "PART-TIME - REMOTE",
+      "period": "Jul 2024 - Present"
+    },
+    {
       "title": "Full Stack",
       "company": "PressX",
       "type": "SELF EMPLOYED",
