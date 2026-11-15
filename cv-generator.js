@@ -362,6 +362,12 @@ function generateCV() {
         var hasLinks = false;
         var storeLx = mL + 5;
 
+        if (proj.website) {
+            setFont('normal', 7.5, C.link);
+            doc.textWithLink('Website', storeLx, y, { url: proj.website });
+            storeLx += doc.getTextWidth('Website') + 6;
+            hasLinks = true;
+        }
         if (proj.playStore) {
             setFont('normal', 7.5, C.link);
             doc.textWithLink('Play Store', storeLx, y, { url: proj.playStore });
