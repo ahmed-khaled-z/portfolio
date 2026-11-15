@@ -76,7 +76,8 @@ const PORTFOLIO_DATA = {
       "items": [
         "Flutter (Web - Android - iOS)",
         "Android Native (Java - Kotlin)",
-        "Laravel"
+        "Laravel",
+        "Next.js (TypeScript)"
       ]
     },
     {
@@ -94,7 +95,9 @@ const PORTFOLIO_DATA = {
         "GitHub Actions",
         "Firebase Hosting Deployment",
         "Environment Management",
-        "Release Management"
+        "Release Management",
+        "Flutter Flavors (dev - staging - prod)",
+        "Vercel"
       ]
     },
     {
@@ -109,7 +112,9 @@ const PORTFOLIO_DATA = {
         "Testing (Unit - Widget - Integration)",
         "Crash Analysis & Debugging",
         "Background Services",
-        "Deep Linking"
+        "Deep Linking",
+        "AI-Assisted Development (Claude Code Skills & Agents)",
+        "Security Auditing & Hardening"
       ]
     },
 
@@ -123,7 +128,12 @@ const PORTFOLIO_DATA = {
         "Google Maps & Mapbox",
         "Payment Gateways",
         "Push Notifications",
-        "Realtime Tracking Systems"
+        "Realtime Tracking Systems",
+        "Stripe & Paymob Payments",
+        "Firebase Cloud Functions",
+        "AI APIs (OpenAI - Gemini)",
+        "MCP Servers",
+        "Product Analytics (PostHog)"
       ]
     },
     {
@@ -155,6 +165,30 @@ const PORTFOLIO_DATA = {
     }
   ],
   "projects": [
+    {
+      "name": "Tota Tota",
+      "company": "Freelance",
+      "year": "2026",
+      "description": "E-commerce platform that turns a child's photo into the hero of a personalized, AI-illustrated storybook. Features AI story and cover generation in Arabic and English, Stripe and Paymob checkout with refunds and audit logs, book reviews, wishlist and cart reminders, a permission-based admin dashboard, an admin MCP server for AI-assisted operations, and a full security hardening sweep.",
+      "shortDescription": "AI Personalized Children's Books",
+      "technologies": ["Next.js", "TypeScript", "Prisma", "Stripe", "Paymob", "OpenAI", "Firebase", "Upstash Redis", "Vercel Blob", "PostHog", "MCP"],
+      "website": "https://tota-tota.com",
+      "playStore": null,
+      "appStore": null,
+      "icon": "T"
+    },
+    {
+      "name": "Bashkatp",
+      "company": "Freelance",
+      "year": "2026",
+      "description": "Business management app for small businesses, featuring customer management, invoicing, subscription plans and requests, an admin panel, and an analytics dashboard with charts. Built on Firebase with Cloud Functions, multi-language support (Arabic/English), and separate dev, staging and production flavors.",
+      "shortDescription": "Business & Invoicing Management",
+      "technologies": ["Flutter", "Bloc", "Clean Architecture", "Firebase Auth", "Cloud Firestore", "Cloud Functions", "Syncfusion Charts", "Flavors"],
+      "website": "https://bashkatp.com",
+      "playStore": null,
+      "appStore": null,
+      "icon": "B"
+    },
     {
       "name": "Routz",
       "company": "Schoolz",
